@@ -27,5 +27,18 @@ namespace SuperMegaUltraTopGameInTheWorld
             {"ShowAllLocations","-showAllLoc" },
             {"ShowPlayerLocation","-showMyLoc" }
         };
+
+        public static Dictionary<string, string> DecideFightOrRun = new Dictionary<string, string>()
+        {
+            {"FightWithEnemy","-fight" },
+            {"RunFromEnemy","-run" },
+
+        };
+        public static Dictionary<string, string> fight = new Dictionary<string, string>()
+        {
+            {"Attack","-attack" },
+            {"Block","-block" },
+
+        };
     }
 }

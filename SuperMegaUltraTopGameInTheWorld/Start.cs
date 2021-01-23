@@ -19,6 +19,10 @@ namespace SuperMegaUltraTopGameInTheWorld
                 Locations.ShowAllLocations();
                 Locations.ShowPlayerLocation();
                 Locations.MoveOnLocation();
+
+                Zombi.MoveOnLocation();
+                Fight.FightSystem();
+
                 ExitGame();
             }
         }
