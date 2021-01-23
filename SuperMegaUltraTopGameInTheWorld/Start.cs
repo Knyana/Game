@@ -12,17 +12,28 @@ namespace SuperMegaUltraTopGameInTheWorld
         private static bool isWork = false;
         public void InitialMethod()
         {
+            StartGame(getCommandsFromConsole);
+            while (isWork)
+            {
+                getCommandsFromConsole = Console.ReadLine();
+                ExitGame(getCommandsFromConsole);
+            }
+        }
+        public void StartGame(string command)
+        {
             getCommandsFromConsole = Console.ReadLine();
             if (getCommandsFromConsole == Commands.handler["StartGame"])
             {
                 isWork = true;
             }
-            while (isWork)
+        }
+        public void ExitGame(string command)
+        {
+            getCommandsFromConsole = Console.ReadLine();
+            if (getCommandsFromConsole == Commands.handler["ExitGame"])
             {
-                Console.WriteLine("Цикл работает");
-                Thread.Sleep(10000);
+                isWork = false;
             }
         }
-
     }
 }
