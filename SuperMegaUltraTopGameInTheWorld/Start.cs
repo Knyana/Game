@@ -9,17 +9,20 @@ namespace SuperMegaUltraTopGameInTheWorld
     public class Start
     {
         public static string getCommandsFromConsole;
-        private static bool isWork = false;
+        private static bool isWork;
         public void InitialMethod()
         {
-            StartGame(getCommandsFromConsole);
+            StartGame();
             while (isWork)
             {
                 getCommandsFromConsole = Console.ReadLine();
-                ExitGame(getCommandsFromConsole);
+                Locations.ShowAllLocations();
+                Locations.ShowPlayerLocation();
+                Locations.MoveOnLocation();
+                ExitGame();
             }
         }
-        public void StartGame(string command)
+        public void StartGame()
         {
             getCommandsFromConsole = Console.ReadLine();
             if (getCommandsFromConsole == Commands.handler["StartGame"])
@@ -27,13 +30,13 @@ namespace SuperMegaUltraTopGameInTheWorld
                 isWork = true;
             }
         }
-        public void ExitGame(string command)
+     
+        public void ExitGame()
         {
-            getCommandsFromConsole = Console.ReadLine();
-            if (getCommandsFromConsole == Commands.handler["ExitGame"])
-            {
-                isWork = false;
-            }
+                if (getCommandsFromConsole == Commands.handler["ExitGame"])
+                {
+                    isWork = false;
+                }
         }
     }
 }
